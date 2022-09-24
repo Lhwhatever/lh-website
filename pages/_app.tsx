@@ -6,6 +6,7 @@ import Head from "next/head";
 import { ThemeProvider } from "@mui/system";
 import theme from "../src/theme";
 import { CssBaseline } from "@mui/material";
+import Layout from "../src/layouts/Layout";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -13,7 +14,7 @@ interface MyAppProps extends AppProps {
     emotionCache?: EmotionCache;
 }
 
-function MyApp(props: MyAppProps) {
+export default function MyApp(props: MyAppProps) {
     const {
         Component,
         emotionCache = clientSideEmotionCache,
@@ -30,10 +31,10 @@ function MyApp(props: MyAppProps) {
             </Head>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Component {...pageProps} />
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
             </ThemeProvider>
         </CacheProvider>
     );
 }
-
-export default MyApp;
