@@ -53,7 +53,7 @@ const Education = (): React.ReactElement => {
     });
 
     return (
-        <Box py={1}>
+        <Box my={1}>
             <Typography variant="h6">Education</Typography>
             <List>
                 {education.map((exp, index) => (
