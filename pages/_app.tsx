@@ -23,11 +23,17 @@ export default function MyApp(props: MyAppProps) {
 
     return (
         <CacheProvider value={emotionCache}>
-            <Head>
+            <Head key="viewport">
                 <meta
                     name="viewport"
                     content="initial-scale=1, width=device-width"
                 />
+            </Head>
+            <Head key="title">
+                <title>Hong Lin</title>
+            </Head>
+            <Head key="favicon">
+                <link rel="shortcut icon" href="/favicon.ico" />
             </Head>
             <ThemeProvider theme={theme}>
                 <CssBaseline />

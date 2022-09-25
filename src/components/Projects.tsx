@@ -185,7 +185,6 @@ const projects: Project[] = [
                     "framework_react",
                     "framework_mui",
                     "framework_nextjs",
-                    "framework_redux",
                 ],
             },
         ],
@@ -227,6 +226,12 @@ const Projects = (): React.ReactElement => {
                         </Grid>
                     ))}
                 </Grid>
+            </Box>
+            <Box my={1}>
+                <Typography variant="body1">
+                    Under construction... More projects will be added to the
+                    above list in due time!
+                </Typography>
             </Box>
         </Container>
     );
