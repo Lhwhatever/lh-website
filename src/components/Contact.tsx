@@ -9,6 +9,7 @@ import {
     alpha,
     Avatar,
     Container,
+    Divider,
     List,
     ListItem,
     ListItemAvatar,
@@ -111,8 +112,11 @@ const ContactEntryTitle = styled(ListItemText)({
 const Contact = (): React.ReactElement => {
     return (
         <Container>
-            <Typography variant="h4">Contact Me</Typography>
-            <List>
+            <Typography variant="h4" mb={2}>
+                Contact Me
+            </Typography>
+            <Divider />
+            <List mt={2}>
                 {contactInfo.map(({ icon: IconComponent, ...info }, index) => (
                     <ListItem key={index}>
                         <ListItemAvatar>

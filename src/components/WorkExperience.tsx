@@ -74,7 +74,7 @@ const WorkExperience = (): React.ReactElement => {
 
     return (
         <Box my={1}>
-            <Typography variant="h6">Work Experience</Typography>
+            <Typography variant="h5">Work Experience</Typography>
             <List>
                 {workExp.map((exp, index) => (
                     <ListItem
