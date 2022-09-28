@@ -146,11 +146,11 @@ const FrameworkList = (props: FrameworkListProps) => {
             rowGap={theme.spacing(1)}
             columnGap={theme.spacing(1)}
         >
-            {props.list.map((framework) =>
+            {props.list.map((framework, index) =>
                 typeof framework === "string" ? (
                     <Badges key={framework} variant={framework} />
                 ) : (
-                    <Chip label={framework.name} size="small" />
+                    <Chip key={index} label={framework.name} size="small" />
                 )
             )}
         </Stack>
