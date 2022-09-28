@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import Education from "./Education";
+import Skills from "./Skills";
 import WorkExperience from "./WorkExperience";
 
 const RESUME_LINK =
@@ -53,6 +54,8 @@ const Resume = (): React.ReactElement => {
             </Box>
             <Divider />
             <Education />
+            <Divider />
+            <Skills />
             <Divider />
             <WorkExperience />
         </Container>
