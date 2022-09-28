@@ -116,7 +116,7 @@ const Contact = (): React.ReactElement => {
                 Contact Me
             </Typography>
             <Divider />
-            <List mt={2}>
+            <List>
                 {contactInfo.map(({ icon: IconComponent, ...info }, index) => (
                     <ListItem key={index}>
                         <ListItemAvatar>
