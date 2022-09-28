@@ -70,7 +70,7 @@ export const badges = {
     ),
     lang_julia: new BadgeData(
         "Julia",
-"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/julia/julia-original.svg"
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/julia/julia-original.svg"
     ),
     framework_django: new BadgeData(
         "Django",
@@ -115,7 +115,7 @@ export const badges = {
     ),
     framework_pandas: new BadgeData(
         "Pandas",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
     ),
     framework_postgreSql: new BadgeData(
         "PostgreSQL",
@@ -184,7 +184,7 @@ export const badges = {
         "Nginx",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
         "#009900"
-    )
+    ),
 };
 
 export type BadgeLabel = keyof typeof badges;
