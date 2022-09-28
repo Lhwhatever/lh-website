@@ -59,7 +59,7 @@ const projects: Project[] = [
         img: "/wanderlust.png",
         feature: true,
         description: [
-            "A multiplayer roleplaying game designed for an online leadership camp. Participants will work together over Zoom to perform actions, complete quests and defeat a monster, while learning about how to make critical decisions and manage resources wisely.",
+            "A multiplayer roleplaying game designed for an online leadership camp for Red Cross Youth Singapore. Participants will work together over Zoom to perform actions, complete quests and defeat a monster, while learning about how to make critical decisions and manage resources wisely.",
         ],
         tags: ["Full Stack", "Web Dev", "Multiplayer Game"],
         links: [
@@ -80,7 +80,12 @@ const projects: Project[] = [
             },
             {
                 label: "Front-End",
-                value: ["lang_ts", "framework_react"],
+                value: [
+                    "lang_ts",
+                    "framework_react",
+                    "lang_html5",
+                    "lang_css3",
+                ],
             },
             {
                 label: "Back-End",
@@ -156,6 +161,49 @@ const projects: Project[] = [
                     "framework_nextjs",
                     "framework_redux",
                 ],
+            },
+        ],
+    },
+    {
+        name: "Values-in-Adventure",
+        img: "/viadventure.png",
+        description: [
+            "A choose-your-own-adventure game created for my volunteering efforts at Red Cross Youth Singapore. It aims to be an amusing and interactive way of teaching student leaders of each school chapter how to organize a service learning project that is meaningful to both the beneficiaries and the students participating in the project.",
+        ],
+        tags: ["Web Dev", "Visual Novel"],
+        links: [
+            {
+                type: "GitHub",
+                text: "Source",
+                url: "https://github.com/WangZijun97/RCY-SL-VN",
+            },
+            {
+                type: "Link",
+                text: "Live",
+                url: "https://wangzijun97.github.io/RCY-SL-VN/",
+            },
+        ],
+        meta: [
+            {
+                label: "Position",
+                value: "Writer/Developer",
+            },
+            {
+                label: "Date",
+                value: formatYM(makeDate(2021, Month.JAN)),
+            },
+            {
+                label: "Front-End",
+                value: [
+                    "lang_js",
+                    "framework_react",
+                    "lang_html5",
+                    "lang_css3",
+                ],
+            },
+            {
+                label: "Deployment",
+                value: "GitHub pages using GitHub Actions",
             },
         ],
     },
