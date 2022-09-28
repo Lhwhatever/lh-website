@@ -4,7 +4,9 @@ import * as React from "react";
 const AboutMe = (): React.ReactElement => {
     return (
         <Container>
-            <Typography variant="h4" mb={2}>About Me</Typography>
+            <Typography variant="h4" mb={2}>
+                About Me
+            </Typography>
             <Divider />
             <Stack spacing={1} mt={2}>
                 <Typography variant="body1">
