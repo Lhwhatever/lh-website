@@ -45,7 +45,12 @@ const projects: Project[] = [
             },
             {
                 label: "Back-End",
-                value: ["lang_py", "framework_flask", "framework_pytorch"],
+                value: [
+                    "lang_py",
+                    "framework_flask",
+                    "framework_pytorch",
+                    "framework_openCv",
+                ],
             },
         ],
     },
@@ -79,7 +84,12 @@ const projects: Project[] = [
             },
             {
                 label: "Back-End",
-                value: ["lang_ts", "framework_express", "framework_socketIo"],
+                value: [
+                    "lang_ts",
+                    "framework_express",
+                    "framework_nodejs",
+                    "framework_socketIo",
+                ],
             },
         ],
     },
@@ -207,7 +217,7 @@ const Projects = (): React.ReactElement => {
             </Typography>
             <Divider />
             <Box my={1}>
-                <Typography variant="h6">Featured</Typography>
+                <Typography variant="h5">Featured</Typography>
                 <Grid container my={1} direction="row" spacing={1}>
                     {featured.map((project, index) => (
                         <Grid xs={12} md={6} lg={4} key={index}>
@@ -218,7 +228,7 @@ const Projects = (): React.ReactElement => {
             </Box>
             <Divider />
             <Box my={1}>
-                <Typography variant="h6">More Projects</Typography>
+                <Typography variant="h5">More Projects</Typography>
                 <Grid container my={1} direction="row" spacing={1}>
                     {others.map((project, index) => (
                         <Grid xs={12} md={6} lg={4} key={index}>
