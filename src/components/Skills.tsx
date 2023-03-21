@@ -45,7 +45,7 @@ const languages: Language[] = [
     },
     {
         badge: "lang_java",
-        score: 6,
+        score: 7,
     },
     {
         badge: "lang_lua",
@@ -95,10 +95,12 @@ const frameworksFrontEnd: Framework[] = [
     "lang_css3",
     "framework_rxNative",
     "framework_nextjs",
+    "framework_tailwind",
 ];
 
 const frameworksBackEnd: Framework[] = [
     "framework_express",
+    "framework_fastapi",
     "framework_nodejs",
     "framework_flask",
     "framework_socketIo",

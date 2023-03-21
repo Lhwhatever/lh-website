@@ -80,6 +80,10 @@ export const badges = {
         "ExpressJS",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
     ),
+    framework_fastapi: new BadgeData(
+        "FastAPI",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+    ),
     framework_flask: new BadgeData(
         "Flask",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
@@ -146,6 +150,10 @@ export const badges = {
         "Socket.IO",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg",
         "#010101"
+    ),
+    framework_tailwind: new BadgeData(
+        "TailwindCSS",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
     ),
     framework_tf: new BadgeData(
         "TensorFlow",
