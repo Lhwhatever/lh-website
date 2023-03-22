@@ -11,57 +11,13 @@ import {
     useTheme,
 } from "@mui/material";
 import * as React from "react";
-import Badges, { BadgeLabel, badges } from "./Badges";
-
-export interface Language {
-    badge: BadgeLabel;
-    score: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
-}
-
-const languages: Language[] = [
-    {
-        badge: "lang_ts",
-        score: 9,
-    },
-    {
-        badge: "lang_js",
-        score: 9,
-    },
-    {
-        badge: "lang_py",
-        score: 9,
-    },
-    {
-        badge: "lang_cpp",
-        score: 8,
-    },
-    {
-        badge: "lang_c",
-        score: 8,
-    },
-    {
-        badge: "lang_kt",
-        score: 7,
-    },
-    {
-        badge: "lang_java",
-        score: 7,
-    },
-    {
-        badge: "lang_lua",
-        score: 6,
-    },
-    {
-        badge: "lang_rs",
-        score: 4,
-    },
-    {
-        badge: "lang_julia",
-        score: 3,
-    },
-];
-
-languages.sort((a, b) => b.score - a.score);
+import Badges, { badges } from "./Badges";
+import { Language } from "../../pages/api/skills/languages";
+import {
+    Framework,
+    FrameworkResponse,
+} from "../../pages/api/skills/frameworks";
+import { fetchData } from "../api";
 
 const ProgressBar = styled(LinearProgress)(({ theme }) => ({
     height: 6,
@@ -84,56 +40,6 @@ const Image = styled("img", {
 })<ImageProps>((props) => ({
     filter: props.invert ? "invert(100%)" : "",
 }));
-
-type Framework = BadgeLabel | { name: string };
-
-const frameworksFrontEnd: Framework[] = [
-    "framework_react",
-    "framework_redux",
-    "framework_mui",
-    "lang_html5",
-    "lang_css3",
-    "framework_rxNative",
-    "framework_nextjs",
-    "framework_tailwind",
-];
-
-const frameworksBackEnd: Framework[] = [
-    "framework_express",
-    "framework_fastapi",
-    "framework_nodejs",
-    "framework_flask",
-    "framework_socketIo",
-    "framework_postgreSql",
-    "framework_mongoDb",
-    "framework_django",
-];
-
-const frameworksEmbedded: Framework[] = [
-    "platform_rpi",
-    "platform_arduino",
-    { name: "I2C" },
-    { name: "Adafruit Sensors" },
-];
-
-const frameworksML: Framework[] = [
-    "framework_pytorch",
-    "framework_tf",
-    { name: "OpenAI Gym" },
-    "framework_numpy",
-    "framework_pandas",
-    { name: "Matplotlib" },
-    { name: "SciPy" },
-    { name: "SciKit Learn" },
-];
-
-const frameworksInfra: Framework[] = [
-    "infra_bash",
-    "infra_linux",
-    "infra_ubuntu",
-    "infra_aws",
-    "infra_nginx",
-];
 
 interface FrameworkListProps {
     list: Framework[];
@@ -162,6 +68,21 @@ const FrameworkList = (props: FrameworkListProps) => {
 const Skills = (): React.ReactElement => {
     const theme = useTheme();
 
+    const [languages, setLanguages] = React.useState<Language[] | null>(null);
+    const [frameworks, setFrameworks] = React.useState<
+        FrameworkResponse[] | null
+    >(null);
+
+    React.useEffect(() => {
+        fetchData<Language[]>("/api/skills/languages")
+            .then(setLanguages)
+            .catch(() => setLanguages(null));
+
+        fetchData<FrameworkResponse[]>("/api/skills/frameworks")
+            .then(setFrameworks)
+            .catch(() => setFrameworks(null));
+    }, []);
+
     return (
         <Grid container my={2} spacing={2}>
             <Grid xs={12}>
@@ -176,7 +97,7 @@ const Skills = (): React.ReactElement => {
                     columnGap={theme.spacing(2)}
                     mt={1}
                 >
-                    {languages.map(({ badge, score }, index) => {
+                    {languages?.map(({ badge, score }, index) => {
                         const { img, label, color } = badges[badge];
                         return (
                             <React.Fragment key={index}>
@@ -185,6 +106,7 @@ const Skills = (): React.ReactElement => {
                                         src={img}
                                         height={24}
                                         invert={!color}
+                                        alt={label}
                                     />
                                 </Box>
                                 <Stack
@@ -207,7 +129,7 @@ const Skills = (): React.ReactElement => {
                                 </Stack>
                             </React.Fragment>
                         );
-                    })}
+                    }) ?? "Loading..."}
                 </Box>
             </Grid>
             <Grid xs={12} md={6}>
@@ -221,16 +143,12 @@ const Skills = (): React.ReactElement => {
                     rowGap={theme.spacing(3)}
                     columnGap={theme.spacing(2)}
                 >
-                    <Stack>Front-End</Stack>
-                    <FrameworkList list={frameworksFrontEnd} />
-                    <Stack>Back-End</Stack>
-                    <FrameworkList list={frameworksBackEnd} />
-                    <Stack>Embedded/ Microcontrollers</Stack>
-                    <FrameworkList list={frameworksEmbedded} />
-                    <Stack>Machine Learning</Stack>
-                    <FrameworkList list={frameworksML} />
-                    <Stack>Infrastructure</Stack>
-                    <FrameworkList list={frameworksInfra} />
+                    {frameworks?.map((framework, index) => (
+                        <React.Fragment key={index}>
+                            <Stack>{framework.description}</Stack>
+                            <FrameworkList list={framework.frameworks} />
+                        </React.Fragment>
+                    )) ?? "Loading..."}
                 </Box>
             </Grid>
         </Grid>

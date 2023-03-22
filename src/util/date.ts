@@ -33,3 +33,7 @@ export function compareDateIntervals<T extends DateInterval>(
 export function formatYM(d: Date): string {
     return `${String(d.getMonth() + 1).padStart(2, "0")} · ${d.getFullYear()}`;
 }
+
+export function makeInterval(fr: Date, to?: Date): string {
+    return `${formatYM(fr)} — ${to ? formatYM(to) : "Present"}`;
+}
