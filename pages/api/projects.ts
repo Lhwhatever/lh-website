@@ -4,6 +4,50 @@ import { formatYM, makeDate, makeInterval, Month } from "../../src/util/date";
 
 const projects: Project[] = [
     {
+        name: "Algorithms with a Purpose 2023",
+        img: "/awap.png",
+        feature: true,
+        description: [
+            "A 22-hour hackathon where teams write bots that compete head-to-head in exploring, claiming territory" +
+                " and exploiting resources on Mars. Teams can challenge each other in unranked matches, climb the" +
+                " leaderboard in ranked scrimmages, and compete for prizes in the final tournament.",
+        ],
+        tags: [
+            "Hackathon Organization",
+            "Back-End",
+            "Matchmaking",
+            "Concurrency",
+        ],
+        meta: [
+            {
+                label: "Position",
+                value: "Matchmaking Server Engineer",
+            },
+            {
+                label: "Date",
+                value: makeInterval(
+                    makeDate(2022, Month.OCT),
+                    makeDate(2023, Month.FEB)
+                ),
+            },
+            {
+                label: "Back-End",
+                value: ["lang_py", "framework_fastapi"],
+            },
+            {
+                label: "Deployment",
+                value: "AWS",
+            },
+        ],
+        links: [
+            {
+                type: "GitHub",
+                text: "Server Source",
+                url: "https://github.com/ACM-CMU/awap-matchmaking",
+            },
+        ],
+    },
+    {
         name: "cmucourses.com",
         img: "/cmucourses.png",
         feature: true,
@@ -100,7 +144,6 @@ const projects: Project[] = [
     {
         name: "Wanderlust",
         img: "/wanderlust.png",
-        feature: true,
         description: [
             "A multiplayer roleplaying game designed for an online leadership camp for Red Cross Youth Singapore. Participants will work together over Zoom to perform actions, complete quests and defeat a monster, while learning about how to make critical decisions and manage resources wisely.",
         ],
