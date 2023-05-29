@@ -10,8 +10,8 @@ const AboutMe = (): React.ReactElement => {
             <Divider />
             <Stack spacing={1} mt={2}>
                 <Typography variant="body1">
-                    Hello! I am Hong, a sophomore majoring in Computer Science
-                    at Carnegie Mellon University. I am from Singapore!
+                    Hello! I am Hong, a rising junior majoring in Computer
+                    Science at Carnegie Mellon University. I am from Singapore!
                 </Typography>
                 <Typography variant="body1">
                     I am an aspiring software engineer, with experience in
