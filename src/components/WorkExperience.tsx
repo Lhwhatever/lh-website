@@ -46,6 +46,12 @@ const workExp: WorkExp[] = [
         start: makeDate(2022, Month.MAY),
         end: makeDate(2022, Month.AUG),
     },
+    {
+        name: "Amazon Web Services",
+        title: "Software Development Engineer Intern · HQ2, Arlington, VA",
+        start: makeDate(2023, Month.MAY),
+        end: makeDate(2023, Month.AUG),
+    },
 ];
 
 workExp.sort((a, b) =>
