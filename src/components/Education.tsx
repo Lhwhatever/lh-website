@@ -13,6 +13,7 @@ import * as React from "react";
 import { compareDateIntervals, makeDate, Month } from "../util/date";
 import DateBadge from "./DateBadge";
 import { LineBreakBox } from "./FlexItems";
+import Grid from "@mui/material/Unstable_Grid2";
 
 interface EducationalExperience {
     name: string;
@@ -37,6 +38,56 @@ const education: EducationalExperience[] = [
 ];
 
 education.sort(compareDateIntervals);
+
+interface Course {
+    code: string;
+    name: string;
+}
+
+const courses: Course[] = [
+    {
+        code: "15-440",
+        name: "Distributed Systems",
+    },
+    {
+        code: "15-213",
+        name: "Introduction to Computer Systems",
+    },
+    {
+        code: "15-259",
+        name: "Probability and Computing",
+    },
+    {
+        code: "15-210",
+        name: "Parallel and Sequential Data Structures and Algorithms",
+    },
+    {
+        code: "15-251",
+        name: "Great Theoretical Ideas in Computer Science",
+    },
+    {
+        code: "15-150",
+        name: "Principles of Functional Programming",
+    },
+    {
+        code: "21-259",
+        name: "Calculus in N Dimensions",
+    },
+    {
+        code: "21-241",
+        name: "Matrices and Linear Transformations",
+    },
+];
+
+const Course = (props: Course): React.ReactElement => {
+    const { code, name } = props;
+    return (
+        <Box>
+            <Typography variant="body2">{code}</Typography>
+            <Typography variant="body1">{name}</Typography>
+        </Box>
+    );
+};
 
 const Education = (): React.ReactElement => {
     const theme = useTheme();
@@ -74,6 +125,14 @@ const Education = (): React.ReactElement => {
                     </ListItem>
                 ))}
             </List>
+            <Typography variant="h5">Courses</Typography>
+            <Grid container spacing={2} p={2}>
+                {courses.map((course) => (
+                    <Grid xs={12} sm={4} key={course.code}>
+                        <Course {...course} />
+                    </Grid>
+                ))}
+            </Grid>
         </Box>
     );
 };
