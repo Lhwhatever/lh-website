@@ -36,6 +36,10 @@ const languages: Language[] = [
         score: 7,
     },
     {
+        badge: "lang_scala",
+        score: 7,
+    },
+    {
         badge: "lang_lua",
         score: 6,
     },

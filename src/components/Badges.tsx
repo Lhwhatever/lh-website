@@ -72,6 +72,10 @@ export const badges = {
         "Julia",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/julia/julia-original.svg"
     ),
+    lang_scala: new BadgeData(
+        "Scala",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scala/scala-original.svg"
+    ),
     framework_django: new BadgeData(
         "Django",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
